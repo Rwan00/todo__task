@@ -56,9 +56,3 @@
 4. **Run the application**:
    ```bash
    flutter run
-
-# 3. Install dependencies
-flutter pub get
-
-# 4. Run the app (choose your target device)
-flutter run
