@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => TodosProvider(),
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
         scaffoldBackgroundColor: MyColors.kScaffoldColor,
         appBarTheme: const AppBarTheme(color: MyColors.kScaffoldColor),

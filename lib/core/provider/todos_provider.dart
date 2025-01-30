@@ -28,7 +28,7 @@ class TodosProvider with ChangeNotifier {
       _todos.insert(0, newTodo);
       notifyListeners();
     } catch (e) {
-      rethrow;
+      throw Exception('Failed to add the task. Please try again.');
     }
   }
 
@@ -41,7 +41,7 @@ class TodosProvider with ChangeNotifier {
         notifyListeners();
       }
     } catch (e) {
-      rethrow;
+      throw Exception('Failed to update the task.');
     }
   }
 
@@ -51,7 +51,9 @@ class TodosProvider with ChangeNotifier {
       _todos.removeWhere((todo) => todo.id == id);
       notifyListeners();
     } catch (e) {
-      rethrow;
+      throw Exception('Failed to delete the task.');
     }
   }
+
+  
 }
