@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 import 'package:provider/provider.dart';
+import 'package:todo_app/features/home/presentation/views/search_view.dart';
 
 import 'package:todo_app/features/home/presentation/widgets/tasks_list_view.dart';
 
@@ -26,20 +28,26 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: const Text(
-        'To-Do List',
-      )),
+        title: const Text(
+          'To-Do List',
+        ),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pushNamed(
+              context,
+              SearchView.routeName,
+            );
+          },
+          icon: Icon(LucideIcons.searchCheck),
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => showAddTodoBottomSheet(context),
         child: const Icon(Icons.add),
       ),
-      body: TasksListView(),
+      body: TasksListView(
+        isSerach: false,
+      ),
     );
   }
-
-  }
-
-
-
-
-
+}

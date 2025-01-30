@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:todo_app/features/home/presentation/views/home_view.dart';
+import 'package:todo_app/core/routes/app_routes.dart';
+
 
 import 'core/provider/todos_provider.dart';
 import 'core/theme/my_colors.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
        
       ),
-        home: const HomeView(),
+       routes: routes,
       ),
     );
   }

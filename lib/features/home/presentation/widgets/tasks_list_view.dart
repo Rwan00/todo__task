@@ -6,7 +6,8 @@ import '../../../../core/provider/todos_provider.dart';
 import 'custom_loading_widget.dart';
 
 class TasksListView extends StatelessWidget {
-  const TasksListView({super.key});
+  final bool isSerach;
+  const TasksListView({super.key, required this.isSerach});
 
   @override
   Widget build(BuildContext context) {
@@ -17,14 +18,16 @@ class TasksListView extends StatelessWidget {
         }
         return ListView.builder(
           physics: BouncingScrollPhysics(),
-          itemCount: provider.todos.length,
+          itemCount:isSerach? provider.filteredTodos.length: provider.todos.length,
           itemBuilder: (context, index) {
-            final todo = provider.todos[index];
-            return TaskItemWidget(todo: todo, onChanged: (value) {
-              provider.updateTodo(
-                todo.copyWith(completed: value ?? false),
-              );
-            },
+            final todo =isSerach? provider.filteredTodos[index]: provider.todos[index];
+            return TaskItemWidget(
+              todo: todo,
+              onChanged: (value) {
+                provider.updateTodo(
+                  todo.copyWith(completed: value ?? false),
+                );
+              },
               delete: () async {
                 try {
                   await provider.deleteTodo(todo.id);
@@ -36,7 +39,8 @@ class TasksListView extends StatelessWidget {
                     ),
                   );
                 }
-              },);
+              },
+            );
           },
         );
       },

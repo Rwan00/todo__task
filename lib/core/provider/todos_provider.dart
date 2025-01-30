@@ -55,5 +55,18 @@ class TodosProvider with ChangeNotifier {
     }
   }
 
+  String _searchQuery = '';
+  String get searchQuery => _searchQuery;
   
+  List<TaskModel> get filteredTodos {
+    if (_searchQuery.isEmpty) return _todos;
+    return _todos.where((todo) => 
+      todo.title.toLowerCase().contains(_searchQuery.toLowerCase())
+    ).toList();
+  }
+
+  void setSearchQuery(String query) {
+    _searchQuery = query;
+    notifyListeners();
+  }
 }
