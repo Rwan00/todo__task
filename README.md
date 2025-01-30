@@ -12,8 +12,7 @@
 - 🔍 Real-time search functionality  
 - ♻️ State management with Provider  
 - 📱 Responsive and intuitive UI  
-- ⏳ Loading indicators for API calls  
-- 🛠️ Modern Flutter architecture  
+- ⏳ Loading indicators for API calls    
 - ✅ Toggle todo completion status  
 - 🚦 Basic error handling  
 - 💬 User-friendly dialogs for input  
@@ -46,15 +45,15 @@
    ```bash
    git clone https://github.com/Rwan00/todo__task.git
    
-2. **Navigate to project directory (after cloning)
+2. **Navigate to project directory (after cloning)**:
    ```bash
    cd todo__task
 
-3. **Install dependencies:
+3. **Install dependencies**:
    ```bash
    flutter pub get
 
-4. **Run the application:
+4. **Run the application**:
    ```bash
    flutter run
 
