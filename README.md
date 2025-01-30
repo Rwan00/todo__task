@@ -45,9 +45,15 @@
 1. **Clone the repository**:  
    ```bash
    git clone https://github.com/Rwan00/todo__task.git
+   
+2. **Navigate to project directory (after cloning)
+   cd todo__task
 
-   # 2. Navigate to project directory (after cloning)
-   cd flutter-todo-app
+3. **Install dependencies:
+   flutter pub get
+
+4. **Run the application:
+   flutter run
 
 # 3. Install dependencies
 flutter pub get
