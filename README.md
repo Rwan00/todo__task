@@ -47,12 +47,15 @@
    git clone https://github.com/Rwan00/todo__task.git
    
 2. **Navigate to project directory (after cloning)
+   ```bash
    cd todo__task
 
 3. **Install dependencies:
+   ```bash
    flutter pub get
 
 4. **Run the application:
+   ```bash
    flutter run
 
 # 3. Install dependencies
