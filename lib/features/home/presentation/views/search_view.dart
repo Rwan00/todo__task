@@ -30,9 +30,7 @@ class _SearchViewState extends State<SearchView> {
           decoration: const InputDecoration(
             hintText: 'Search todos...',
             border: InputBorder.none,
-            hintStyle: TextStyle(color: Colors.white70),
           ),
-          style: const TextStyle(color: Colors.white),
           onChanged: (value) =>
               context.read<TodosProvider>().setSearchQuery(value),
         ),
@@ -46,7 +44,6 @@ class _SearchViewState extends State<SearchView> {
           ),
         ],
       ),
-      // ... rest of the existing scaffold code ...
       body: TasksListView(
         isSerach: true,
       ),
